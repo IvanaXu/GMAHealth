@@ -2,6 +2,8 @@ import datetime
 import pandas as pd
 from tqdm import tqdm
 import matplotlib.pyplot as plt
+plt.style.use('classic')
+
 # from numpy import polyfit, poly1d
 
 data = pd.read_csv("data/RECORD.csv")
