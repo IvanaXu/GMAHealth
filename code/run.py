@@ -32,7 +32,7 @@ for dt in tqdm(dtL):
     idata = data[data[dtname] == dt]
     x, y = idata[xname], idata["VAL"]
 
-    plt.figure(figsize=(12, 4))
+    plt.figure(figsize=(9, 4))
     plt.plot(x, y, marker="+", color=dcolor, linewidth=dline)
 
     if dlabel:
