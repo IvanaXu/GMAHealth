@@ -2,7 +2,7 @@ import datetime
 import pandas as pd
 from tqdm import tqdm
 import matplotlib.pyplot as plt
-from numpy import polyfit, poly1d
+# from numpy import polyfit, poly1d
 
 data = pd.read_csv("data/RECORD.csv")
 
@@ -32,18 +32,15 @@ for dt in tqdm(dtL):
     idata = data[data[dtname] == dt]
     x, y = idata[xname], idata["VAL"]
 
-    plt.figure(figsize=(9, 4))
+    plt.figure(figsize=(12, 4))
     plt.plot(x, y, marker="+", color=dcolor, linewidth=dline)
-
-    _y = poly1d(polyfit(x, y.fillna(0), 9))
-    # plt.plot(x, _y(x), "r-")
 
     if dlabel:
         for _x, _y in zip(x, y):
-            plt.text(_x, _y, _y, ha='center', va='bottom', fontsize=10, color="red")
+            plt.text(_x, _y, _y, ha='center', va='bottom', fontsize=10, color=dcolor)
 
-    plt.xlabel("Date")
-    plt.ylabel("Value")
+    plt.xlabel("Days")
+    plt.ylabel("mmol/L")
     plt.title(f"{dt}")
     plt.axis([1, dtop, 6.0, 12.0])
     plt.savefig(f"outs/DV_{dt}.png")
