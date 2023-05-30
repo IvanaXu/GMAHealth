@@ -21,7 +21,7 @@ for imth in tqdm(mth):
     idata = data[data["mDATE"] == imth]
 
     plt.figure(figsize=(9, 3))
-    plt.plot(idata["dDATE"], idata["VAL"], "r*")
+    plt.plot(idata["dDATE"], idata["VAL"], "r-*")
     
     plt.xlabel("Date")
     plt.ylabel("Value")
