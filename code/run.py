@@ -2,7 +2,7 @@ import datetime
 import pandas as pd
 from tqdm import tqdm
 import matplotlib.pyplot as plt
-plt.style.use('classic')
+plt.style.use("bmh")
 
 # from numpy import polyfit, poly1d
 
@@ -34,18 +34,18 @@ for dt in tqdm(dtL):
     idata = data[data[dtname] == dt]
     x, y = idata[xname], idata["VAL"]
 
-    plt.figure(figsize=(9, 4))
-    plt.plot(x, y, marker="+", color=dcolor, linewidth=dline)
+    plt.figure(figsize=(12, 4))
+    plt.plot(x, y, marker="_", color=dcolor, linewidth=dline)
 
     if dlabel:
         for _x, _y in zip(x, y):
-            plt.text(_x, _y, _y, ha='center', va='bottom', fontsize=10, color=dcolor)
+            plt.text(_x, _y, _y, ha="center", va="bottom", fontsize=12, color=dcolor)
 
     plt.xlabel("Days")
     plt.ylabel("mmol/L")
     plt.title(f"{dt}")
-    plt.axis([1, dtop, 6.0, 12.0])
-    plt.savefig(f"outs/DV_{dt}.png")
+    plt.axis([1, dtop, 7.0, 12.0])
+    plt.savefig(f"outs/DV_{dt}.png", bbox_inches="tight")
 
     plt.close()
 
