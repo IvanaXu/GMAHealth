@@ -2,7 +2,6 @@ import datetime
 import pandas as pd
 from tqdm import tqdm
 import matplotlib.pyplot as plt
-plt.style.use("bmh")
 
 # from numpy import polyfit, poly1d
 
@@ -25,17 +24,18 @@ print(dtL)
 
 INSERT = f"Update Time {datetime.datetime.now()}\n"
 for dt in tqdm(dtL):
-    [xname, dtname, dtop, dlabel, dline, dcolor] = [
-        "dyDATE", "yDATE", 366, False, 1, "blue"
+    [xname, dtname, dtop, dlabel, dline, dcolor, dmark, dtype] = [
+        "dyDATE", "yDATE", 366, False, 1, "blue", "d", "seaborn"
     ] if len(dt) == 4 else [
-        "dmDATE", "mDATE", 31, True, 0, "red"
+        "dmDATE", "mDATE", 31, True, 0, "red", "", "bmh"
     ]
 
     idata = data[data[dtname] == dt]
     x, y = idata[xname], idata["VAL"]
 
+    plt.style.use(dtype)
     plt.figure(figsize=(12, 4))
-    plt.plot(x, y, marker="_", color=dcolor, linewidth=dline)
+    plt.plot(x, y, marker=dmark, color=dcolor, linewidth=dline)
 
     if dlabel:
         for _x, _y in zip(x, y):
