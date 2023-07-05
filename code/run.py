@@ -15,14 +15,20 @@ data["dmDATE"] = data["DATE"].dt.day
 print(data)
 print(data.describe())
 
+myFig = plt.figure()
+data.boxplot(column="VAL")
+plt.savefig("outs/Box.png", bbox_inches="tight")
+plt.close()
+
 dtL = data.groupby("mDATE").sum("VAL")
 dtL = set([i for i in dtL[dtL["VAL"] > 0].index])
 dtL |= set([i[:4] for i in dtL])
 dtL = sorted(dtL)
 print(dtL)
+# raise "Test"
 
 
-INSERT = f"Update Time {datetime.datetime.now()}\n"
+INSERT = f"Update Time {datetime.datetime.now()}\n![Box](outs/Box.png)Details\n"
 for dt in tqdm(dtL):
     [xname, dtname, dtop, dlabel, dline, dcolor, dmark, dtype] = [
         "dyDATE", "yDATE", 366, False, 1, "blue", "d", "seaborn"
