@@ -28,7 +28,7 @@ print(dtL)
 # raise "Test"
 
 
-INSERT = f"Update Time {datetime.datetime.now()}\n![Box](outs/Box.png)\nDetails\n"
+INSERT = f"Update Time {datetime.datetime.now()}\n![Box](outs/Box.png)\n"
 for dt in tqdm(dtL):
     [xname, dtname, dtop, dlabel, dline, dcolor, dmark, dtype] = [
         "dyDATE", "yDATE", 366, False, 1, "blue", "d", "seaborn"

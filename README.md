@@ -1,9 +1,8 @@
 
 # GMAHealth
 
-Update Time 2023-07-07 08:29:52.983034
+Update Time 2023-07-07 08:33:27.342133
 ![Box](outs/Box.png)
-Details
 
 ![2021](outs/DV_2021.png)
 ![2021-03](outs/DV_2021-03.png)
