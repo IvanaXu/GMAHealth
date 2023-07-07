@@ -15,7 +15,7 @@ data["dmDATE"] = data["DATE"].dt.day
 print(data)
 print(data.describe())
 
-myFig = plt.figure()
+myFig = plt.figure(figsize=(12, 4))
 data.boxplot(column="VAL")
 plt.savefig("outs/Box.png", bbox_inches="tight")
 plt.close()
