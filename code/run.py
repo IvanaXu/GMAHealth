@@ -28,7 +28,9 @@ print(dtL)
 # raise "Test"
 
 
-INSERT = f"Update Time {datetime.datetime.now()}\n![Box](outs/Box.png)\n"
+BOX = """<div align=center><img src="outs/Box.png"/></div>"""
+
+INSERT = f"Update Time {datetime.datetime.now()}\n{BOX}\n"
 for dt in tqdm(dtL):
     [xname, dtname, dtop, dlabel, dline, dcolor, dmark, dtype] = [
         "dyDATE", "yDATE", 366, False, 1, "blue", "d", "seaborn"
