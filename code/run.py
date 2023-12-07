@@ -3,6 +3,9 @@ import pandas as pd
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 
+import warnings
+warnings.filterwarnings('ignore')
+
 # from numpy import polyfit, poly1d
 
 data = pd.read_csv("data/RECORD.csv")
