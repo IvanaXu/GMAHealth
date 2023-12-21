@@ -34,7 +34,7 @@ print(dtL)
 BOX = """<div align=center><img src="outs/Box.png"/></div>"""
 
 INSERT = f"Update Time {datetime.datetime.now()}\n{BOX}\n"
-for dt in tqdm(dtL):
+for dt in tqdm(dtL[::-1]):
     [xname, dtname, dtop, dlabel, dline, dcolor, dmark, dtype] = [
         "dyDATE", "yDATE", 366, False, 1, "blue", "d", "seaborn"
     ] if len(dt) == 4 else [
